@@ -4,7 +4,7 @@
         ""
     ],
     "companyName": "ipedrazas@gmail.com",
-    "longName": "OMW.js",
+    "longName": "On My Way!",
     "projectType": "pebblejs",
     "resources": {
         "media": [
@@ -32,7 +32,7 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "OMW.js",
+    "shortName": "OMW",
     "uuid": "0a5f6ec6-5f94-4288-936e-9a777b2c9f1f",
     "versionCode": 1,
     "versionLabel": "1.0",
