@@ -7,10 +7,10 @@
 var UI = require('ui');
 var Vector2 = require('vector2');
 var ajax = require('ajax');
-var Base64 = require('base64');
+// var Base64 = require('encoder');
 
-// var TWILIO_URL = 'https://api.twilio.com/2010-04-01/Accounts/AC03e448fcd4b653801fb98dd24fc666e06/Messages.json';
-var test_url = 'http://api.theysaidso.com/qod.json';
+var TWILIO_URL = 'https://api.twilio.com/2010-04-01/Accounts/AC03e448fcd4b653801fb98dd24fc666e06/Messages.json';
+// var test_url = 'http://api.theysaidso.com/qod.json';
 
 var main = new UI.Card({
   title: 'OMW!',
@@ -57,21 +57,22 @@ main.on('click', 'select', function(e) {
   wind.on('click', 'select', function(e){
     console.log('OMW sent');
 
-    var credentials =  Base64.encode ("AC03e448fc4b653801fb98dd24fc666e06:49b3256910a46dea05f46f1f8ac8c65f");
-    console.logs(credentials);
+    var credentials = "";
+    console.log(credentials);
     
-//     var twilioBody = { 
-//         'to': "+447429346069", 
-//         'from': "+447903549460", 
-//         'body': "Pebble - Twilio Test",   
-//     };
+    var twilioBody = { 
+        'to': "+4474293460", 
+        'from': "+4479035460", 
+        'body': "Pebble - Twilio OMW Test",   
+    };
     
     ajax(
       {
-        url: test_url,
+        url: TWILIO_URL,
+        method : 'post',
         type: 'json',
-//         data: twilioBody,
-//         headers: {'Authorization': 'Basic ' + credentials} 
+        data: twilioBody,
+        headers: {'Authorization': 'Basic ' + credentials} 
       },
       function(data) {
         // Success!
@@ -80,7 +81,9 @@ main.on('click', 'select', function(e) {
       },
       function(error) {
         // Failure!
-        console.log('Failed fetching data: ' + error);
+        console.log('Failed fetching data: ');
+        console.log(error);
+
       }
 );
   });
