@@ -1,3 +1,3 @@
-FROM python:2-build
+FROM python:2-onbuild
 
 CMD [ "python", "./app.py" ]
